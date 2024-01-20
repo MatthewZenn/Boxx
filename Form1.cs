@@ -69,14 +69,16 @@ namespace Boxx
                 msgbtn = MessageBoxButtons.RetryCancel;
             }
 
+            this.Opacity = 0;
             MessageBox.Show(richTextBox1.Text, titleBox.Text, msgbtn, msgicon);
-            if (textBox1.Text != null)
+            if (textBox1.Text != "")
             {
                 Process.Start(command);
+                Application.Exit();
             }
             else
             {
-                return;
+                Application.Exit();
             }
         }
     }
