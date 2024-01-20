@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoxxWindow));
             button1 = new Button();
             richTextBox1 = new RichTextBox();
             label1 = new Label();
@@ -37,8 +38,6 @@
             comboBox2 = new ComboBox();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            textBox2 = new TextBox();
             label6 = new Label();
             titleBox = new TextBox();
             SuspendLayout();
@@ -47,7 +46,7 @@
             // 
             button1.BackColor = Color.White;
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(154, 394);
+            button1.Location = new Point(154, 370);
             button1.Name = "button1";
             button1.Size = new Size(103, 32);
             button1.TabIndex = 0;
@@ -125,23 +124,6 @@
             label4.TabIndex = 2;
             label4.Text = "Buttons";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(12, 365);
-            label5.Name = "label5";
-            label5.Size = new Size(36, 15);
-            label5.TabIndex = 2;
-            label5.Text = "Delay";
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(54, 363);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(49, 22);
-            textBox2.TabIndex = 3;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -164,14 +146,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(269, 438);
+            ClientSize = new Size(269, 414);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
-            Controls.Add(textBox2);
             Controls.Add(titleBox);
             Controls.Add(textBox1);
             Controls.Add(label4);
-            Controls.Add(label5);
             Controls.Add(label6);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -179,7 +159,10 @@
             Controls.Add(richTextBox1);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "BoxxWindow";
+            ShowInTaskbar = false;
             Text = "Boxx";
             ResumeLayout(false);
             PerformLayout();
@@ -196,8 +179,6 @@
         private ComboBox comboBox2;
         private Label label3;
         private Label label4;
-        private Label label5;
-        private TextBox textBox2;
         private Label label6;
         private TextBox titleBox;
     }
