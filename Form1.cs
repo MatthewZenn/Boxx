@@ -27,6 +27,7 @@ namespace Boxx
             var MessageIcon = comboBox1.SelectedIndex;
             var MessageButton = comboBox2.SelectedIndex;
             var command = textBox1.Text;
+            var process = textBox2.Text;
 
             var msgicon = MessageBoxIcon.Warning;
             var msgbtn = MessageBoxButtons.OK;
@@ -69,11 +70,11 @@ namespace Boxx
                 msgbtn = MessageBoxButtons.RetryCancel;
             }
 
-            this.Opacity = 0;
+            this.Visible = false;
             MessageBox.Show(richTextBox1.Text, titleBox.Text, msgbtn, msgicon);
-            if (textBox1.Text != "")
+            if (textBox2.Text != "")
             {
-                Process.Start(command);
+                Process.Start(process, command);
                 Application.Exit();
             }
             else
