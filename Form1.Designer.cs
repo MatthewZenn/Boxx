@@ -40,8 +40,7 @@
             label4 = new Label();
             label6 = new Label();
             titleBox = new TextBox();
-            label5 = new Label();
-            textBox2 = new TextBox();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // button1
@@ -78,7 +77,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(138, 285);
+            label2.Location = new Point(12, 285);
             label2.Name = "label2";
             label2.Size = new Size(119, 15);
             label2.TabIndex = 2;
@@ -87,9 +86,9 @@
             // textBox1
             // 
             textBox1.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(136, 303);
+            textBox1.Location = new Point(12, 303);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(120, 22);
+            textBox1.Size = new Size(245, 22);
             textBox1.TabIndex = 3;
             // 
             // comboBox1
@@ -143,22 +142,15 @@
             titleBox.Size = new Size(245, 23);
             titleBox.TabIndex = 3;
             // 
-            // label5
+            // checkBox1
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(11, 285);
-            label5.Name = "label5";
-            label5.Size = new Size(108, 15);
-            label5.TabIndex = 2;
-            label5.Text = "Proccess (optional)";
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(11, 303);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(119, 22);
-            textBox2.TabIndex = 3;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(12, 373);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(87, 19);
+            checkBox1.TabIndex = 5;
+            checkBox1.Text = "Don't Close";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // BoxxWindow
             // 
@@ -166,14 +158,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(269, 409);
+            Controls.Add(checkBox1);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(titleBox);
-            Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label4);
             Controls.Add(label6);
-            Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -181,6 +172,7 @@
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "BoxxWindow";
             Text = "Boxx";
@@ -201,7 +193,6 @@
         private Label label4;
         private Label label6;
         private TextBox titleBox;
-        private Label label5;
-        private TextBox textBox2;
+        private CheckBox checkBox1;
     }
 }

@@ -1,5 +1,7 @@
 using System.Net.Security;
 using System.Diagnostics;
+using System.Drawing.Text;
+using System;
 
 namespace Boxx
 {
@@ -27,7 +29,6 @@ namespace Boxx
             var MessageIcon = comboBox1.SelectedIndex;
             var MessageButton = comboBox2.SelectedIndex;
             var command = textBox1.Text;
-            var process = textBox2.Text;
 
             var msgicon = MessageBoxIcon.Warning;
             var msgbtn = MessageBoxButtons.OK;
@@ -72,10 +73,30 @@ namespace Boxx
 
             this.Visible = false;
             MessageBox.Show(richTextBox1.Text, titleBox.Text, msgbtn, msgicon);
-            if (textBox2.Text != "")
+
+            if (textBox1.Text != "" && checkBox1.Checked == true)
             {
-                Process.Start(process, command);
+                var psi = new ProcessStartInfo
+                {
+                    UseShellExecute = true,
+                    FileName = command
+                };
+                Process.Start(psi);
+                this.Visible = true;
+            }
+            else if (textBox1.Text != "")
+            {
+                var psi = new ProcessStartInfo
+                {
+                    UseShellExecute = true,
+                    FileName = command
+                };
+                Process.Start(psi);
                 Application.Exit();
+            }
+            else if (checkBox1.Checked == true)
+            {
+                this.Visible = true;
             }
             else
             {
